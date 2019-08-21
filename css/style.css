@@ -1,0 +1,443 @@
+*{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body, html{
+    font-family: 'Lato', sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+nav ul li a, .section-header h1, .section-header p{
+    color: #fff;
+}
+
+header{
+    background-color: #100501;
+}
+
+.head-topo{
+    background-color: #FEF8BC;
+    width: 100%;
+    position: relative;
+    padding: 10px 0;
+    z-index: 99999;
+    text-align: center;
+}
+
+.head-topo a{
+    text-decoration: none;
+    color: #001;
+    font-weight: bold;
+}
+
+header .head{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header .head figure{
+    padding: 10px 15px;
+}
+
+header .head figure img{
+    max-width: 100%;
+}
+
+.navigation, .logo{
+    width: 50%;
+    display: flex;
+}
+
+.navigation{
+    justify-content: flex-end;
+    position: relative;
+}
+
+#nav{
+    z-index: 99999;
+}
+
+.menu{
+    background-color: #D98972;
+    border-radius: 10%;
+    width: 50px;
+    height: 50px;
+    margin: 40px;
+    cursor: pointer;
+    
+}
+
+.menu .hamburguer{
+    position: relative;
+    display: block;
+    background-color: #001;
+    width: 30px;
+    height: 2px;
+    top: 25px;
+    left: 10px;
+    transition: .5s ease-in-out;
+}
+
+.menu .hamburguer::after, .menu .hamburguer::before{
+    background-color: #001;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: .5s ease-in-out;
+}
+
+.menu .hamburguer::after{
+    top: -10px;
+}
+
+.menu .hamburguer::before{
+    top: 10px;
+}
+
+#menu-hamburguer{
+    display: none;
+}
+
+input:checked ~ label .hamburguer {
+    transform: rotate(45deg);
+}
+
+input:checked ~ label .hamburguer::before {
+    transform: rotate(90deg);
+    top: 0;
+}
+
+input:checked ~ label .hamburguer::after {
+    transform: rotate(90deg);
+    top: 0;
+}
+
+input:checked ~ nav{
+    opacity:1;
+    top:50px;
+}
+
+nav{
+    position: fixed;
+    background-color: #100501;
+    height: 80%;
+    display: block;
+    opacity: 0;
+    top:-500px;
+    padding: 20px 0;
+    box-sizing: border-box;
+    z-index: 9998;
+    border-radius: 5px;
+    transition: .4s ease-in-out;
+}
+
+nav ul{
+    margin-top: 130px;
+}
+
+nav ul li{
+    list-style: none;
+    padding: 25px 50px;
+    cursor: pointer;
+}
+
+nav ul li a{
+    text-decoration: none;
+}
+
+nav ul li:hover{
+    background-color:#C68974;
+    color: #001;
+    transition: 1s;
+}
+
+.active{
+    display: block;
+    right: 0;
+}
+
+/* Section Header */
+
+.section-header{
+    height: 72%;
+    width: 100%;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+}
+
+.section-header-top{
+    padding: 50px 0;
+}
+
+.section-header h1, .section-header p{
+    padding: 45px 0;
+}
+
+.section-header h1{
+    font-size: 56px;
+}
+
+.section-header p{
+    font-size: 26px;
+}
+
+/* Pesquisa imóveis */
+
+.pesquisa-imoveis{
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px 0;
+}
+
+.pesquisa-imoveis h2{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+    border-top-width: 3px;
+    border-bottom-width:3px;
+    border-style: solid;
+    border-color: #001;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.pesquisa-imoveis .pesquisa-imoveis-button{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px 20px 0 20px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+
+.pesquisa-imoveis .pesquisa-imoveis-button div{
+    width: 200px;
+    height: 50px;
+    text-transform: uppercase;
+    line-height: 50px;
+    background-color: #FEF4BF;
+    cursor: pointer;
+}
+
+.active-pesquisa{
+    background-color: #EDA991!important;
+    color: #fff;
+}
+
+.pesquisa-imoveis form{
+    background-color: #EDA991;
+    padding: 5px;
+}
+
+form .busca-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+form .busca-form div{
+    margin: 10px 2px;
+}
+
+form .busca-form div select, form .busca-form div input{
+    height: 50px;
+    padding: 0 23px;
+    box-sizing: content-box;
+}
+
+form .button-form{
+    padding: 10px 0;
+}
+
+form .button-form input{
+    background-color:#FEF4BF;
+    padding: 15px 60px;
+    font-size: 23px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+form .button-form input:hover{
+    background-color: #fffd02;
+    transition: 1s; 
+}
+
+/* Imóveis */
+
+.imoveis{
+    padding: 20px 0;
+}
+
+.imoveis-title h2{
+    text-transform: uppercase;
+    display: block;
+    margin:0 auto;
+    text-align: center;
+    font-size: 30px;
+    border-top-width: 3px;
+    border-bottom-width:3px;
+    border-style: solid;
+    border-color: #001;
+    max-width: 300px;
+}
+
+.lista-imoveis{
+    padding: 45px 0;
+}
+
+.lista-imoveis ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.lista-imoveis ul li{
+    width: 31%;
+    margin: 1%;
+    list-style: none;
+}
+
+.lista-imoveis .lista-imoveis-box{
+    position: relative;
+    overflow: hidden;
+}
+
+.lista-imoveis .lista-imoveis-box img{
+    max-width: 100%;
+}
+
+.lista-imoveis .lista-imoveis-box .lista-imoveis-legend{
+    position: absolute;
+    bottom:0px;
+    padding: 20px;
+}
+
+.lista-imoveis .lista-imoveis-box .lista-imoveis-legend p{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #100501;
+    border-radius: 20px;
+    padding: 5px 15px;
+    text-align: center;
+}
+
+.lista-imoveis .lista-imoveis-box .lista-imoveis-legend span{
+    color: #fff;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* Documentos imóveis */
+
+.dados-imoveis{
+    background-attachment: fixed;
+    background-image: url(../img/bg-paralax.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.dados-imoveis .box-dados{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dados-imoveis .box-dados div{
+    background-color: #FEF4BF;
+    width: 31%;
+    margin: 6% 1%;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 7px solid#100501;
+    cursor: pointer;  
+}
+
+.dados-imoveis .box-dados div i{
+    font-size: 45px;
+    padding: 30px 0;
+}
+
+.dados-imoveis .box-dados div p{
+    font-size: 30px;
+    padding: 20px 0 30px 0;
+    font-weight: bold;
+}
+
+.dados-imoveis .box-dados div:hover{
+    background-color: #FFF;
+    transition: 1s;
+}
+
+/* Footer */
+
+.sub-footer{
+    padding: 20px 0;
+    margin: 20px 0;
+}
+
+.sub-footer .sub-footer-end{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 35px 0;
+}
+
+.sub-footer-map{
+    display: flex;
+}
+
+.sub-footer-enddados, .sub-footer-map{
+    width: 48%;
+    margin: 1%;
+    justify-content: center;
+}
+
+.sub-footer-enddados span{
+    display: table-cell;
+    vertical-align: middle;
+    height: 300px;
+    line-height: 30px;
+}
+
+.sub-footer-enddados span a{
+    color: #001;
+}
+
+footer{
+    background-color: #100501;
+    padding: 20px 0;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+}
+
+@media (max-width: 600px) 
+{
+    .menu{
+        margin: 15px 10px;
+    }
+
+    .head-topo a{
+        font-size: 13px;
+    }
+}
+
